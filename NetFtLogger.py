@@ -81,6 +81,4 @@ def logData(path):
 			sock.sendto(stop_command,atiAddress)
 			print "\n\nInterrupted by user - sensor connecetion and output files closed\n\n"
 		
-
-
-basename = logData(path = 'NetFT/')
+logData(path = 'NetFT/')
