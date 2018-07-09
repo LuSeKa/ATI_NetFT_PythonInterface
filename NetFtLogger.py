@@ -46,7 +46,7 @@ def logData(path):
 		logFile.write('Time,Fx,Fy,Fz\n')
 		try:
 			print "logging data...."
-						
+			# logging as fast as possible			
 			while True:	
 				logFile.write('%f,'%(time.time()-timeOffset)) # timestamp				
 					
@@ -74,12 +74,13 @@ def logData(path):
 				# print for online feedback
 				print Fz[0]/float(1000000)
 								
-				logFile.write('\n')				
-					
+				logFile.write('\n')
+			
 		except KeyboardInterrupt:
 			logFile.close()
 			sock.sendto(stop_command,atiAddress)
 			print "\n\nInterrupted by user - sensor connecetion and output files closed\n\n"
 		
-logData(path = 'NetFT/')
 
+
+basename = logData(path = 'NetFT/')
